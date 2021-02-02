@@ -9,8 +9,9 @@ logging.basicConfig(format='%(asctime)s [%(levelname)s] : %(message)s',
                     level=logging.DEBUG)
 
 # https://pro.coinmarketcap.com/account
-COIN_API_KEY = 'ca4addc3-2e2a-4c2a-9a15-c8f9c4c929da'
-
+#needs to create 
+COIN_API_KEY = 'xxx'
+host = "localhost"
 
 def fetching_coin_market_cap():
 
@@ -83,7 +84,7 @@ def create_qr_code(txt):
 def login(user, pwd):
     headers = {'X-USERNAME': user, 'X-PASSWORD': pwd}
     r = requests.get(
-        'http://dataglobal-cs/RESTfulAPI/csrest/v1.1/auth/logon?applClass=Common&progId=Standard',
+        f'http://{host}/RESTfulAPI/csrest/v1.1/auth/logon?applClass=Common&progId=Standard',
         headers=headers)
     assert r.status_code == 200
     return r.headers['X-ARCHIVETOKEN']
