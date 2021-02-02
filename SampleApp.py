@@ -45,7 +45,7 @@ def create_dg_note(text, name, dbid, token):
     query = {'isSapCompliant': False}
     header = {'X-ARCHIVETOKEN': token}
     r = requests.post(
-        f'http://dataglobal-cs/RESTfulAPI/csrest/v1.1/dept/{dbid}/docs/',
+        f'http://{host}/RESTfulAPI/csrest/v1.1/dept/{dbid}/docs/',
         headers=header,
         files=form_data,
         params=query)
